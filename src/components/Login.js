@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import * as auth0 from 'auth0-js';
 import jwtDecode from 'jwt-decode';
 import axios from 'axios';
@@ -12,18 +12,15 @@ class Login extends Component {
     };
   }
   componentDidMount(){
+    console.log('hash')
     
- 
         axios.get('/api/user_data').then(response => {
             this.setState({
                 user: response.data
             })
         })
     }
-
-  
-
-
+    
   login = () => {
     
     this.auth0 = new auth0.WebAuth({

@@ -1,23 +1,20 @@
 import React, { Component } from 'react';
 import jwtDecode from 'jwt-decode';
+import { withRouter } from 'react-router-dom';
 import axios from 'axios';
 import loader from '../loader.gif';
 
-export default class Callback extends Component {
+class Callback extends Component {
     constructor(props){
         super(props)
         this.state = {
 
         }
-        
     }
 
     componentDidMount(){
         
         let test = window.location.href.includes('=') ? window.location.href.split('id_token=')[1] : '';
-        
-        console.log('hash', window.location.hash)
-        
         
         if(test) {
 
@@ -46,3 +43,5 @@ export default class Callback extends Component {
         );
     }
 }   
+
+export default withRouter(Callback)
