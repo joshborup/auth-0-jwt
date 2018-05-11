@@ -1,4 +1,4 @@
 # auth-0-jwt
 
 
-## Example for logging in with auth0 using JSON web tokens
+## Example for logging in with auth0 using JSON web tokens and React.JS
